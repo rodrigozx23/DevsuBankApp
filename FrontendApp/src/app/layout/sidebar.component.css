@@ -1,0 +1,4 @@
+.menu { display:flex; flex-direction:column; gap:6px; padding:12px; }
+.menu a { text-decoration:none; color:#333; padding:8px 10px; border-radius:8px; }
+.menu a:hover { background:#f3f3f3; }
+.menu a.active { background:#111827; color:#fff; }

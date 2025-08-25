@@ -1,0 +1,35 @@
+<section class="page">
+  <div class="page-header">
+    <h2>{{ id ? 'Editar' : 'Nuevo' }} Cliente</h2>
+  </div>
+
+  <form [formGroup]="f" class="form" (ngSubmit)="guardar()">
+    <label>Nombre* <input formControlName="nombre" /></label>
+    <div class="err" *ngIf="f.get('nombre')?.touched && f.get('nombre')?.invalid">Nombre requerido (min 2).</div>
+
+    <label>Identificación* <input formControlName="identificacion" /></label>
+    <div class="err" *ngIf="f.get('identificacion')?.touched && f.get('identificacion')?.invalid">Requerido.</div>
+
+    <label>Género
+      <select formControlName="genero">
+        <option value="M">M</option><option value="F">F</option><option value="O">O</option>
+      </select>
+    </label>
+
+    <label>Edad <input type="number" formControlName="edad" /></label>
+    <label>Dirección <input formControlName="direccion" /></label>
+    <label>Teléfono <input formControlName="telefono" /></label>
+
+    <label>Contraseña* <input type="password" formControlName="contrasena" /></label>
+    <div class="err" *ngIf="f.get('contrasena')?.touched && f.get('contrasena')?.invalid">Mínimo 4 caracteres.</div>
+
+    <label class="chk"><input type="checkbox" formControlName="estado" /> Activo</label>
+
+    <div class="actions">
+      <button class="btn" type="button" (click)="volver()">Cancelar</button>
+      <button class="btn btn-yellow" type="submit">{{ id ? 'Actualizar' : 'Guardar' }}</button>
+    </div>
+
+    <p class="msg" *ngIf="error">{{ error }}</p>
+  </form>
+</section>

@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.swp
+*.log
+node_modules/
+tests/
+**/*.user
+**/*.suo
+bin/
+obj/

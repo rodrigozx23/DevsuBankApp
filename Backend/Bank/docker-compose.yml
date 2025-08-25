@@ -1,0 +1,31 @@
+version: "3.9"
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Your_password123
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+    #healthcheck:
+    #  test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P Your_password123 -C -Q 'SELECT 1' || exit 1"]
+    #  interval: 10s
+    #  retries: 10
+  api:
+    build:
+      context: .           # <— Dockerfile está aquí mismo (Backend/)
+      dockerfile: Dockerfile
+    depends_on:
+      - sqlserver             # simple: arranca api tras lanzar sqlserver
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__Default: "Server=sqlserver,1433;Database=BankDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True"
+      # AUTO_MIGRATE: "true"   # usa esto si añadiste db.Database.Migrate() en Program.cs
+    ports:
+      - "8080:8080"
+volumes:
+  mssqldata:

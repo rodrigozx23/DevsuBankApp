@@ -1,0 +1,55 @@
+<section class="page">
+  <div class="page-header">
+    <h2>Movimientos</h2>
+    <div class="actions">      
+      <div class="search">
+        <label>
+          Cuenta
+          <select
+            [ngModel]="cuentaId()"
+            (ngModelChange)="cuentaId.set($event)">
+            <option *ngFor="let c of cuentas()" [ngValue]="c.cuentaId">
+              {{ c.numeroCuenta }} — {{ c.clienteNombre || ('Cliente #' + c.clienteId) }}
+            </option>
+          </select>
+        </label>
+        <button class="btn" (click)="cargar()">Buscar</button>
+      </div>
+      <a class="btn btn-yellow" routerLink="/movimientos/nuevo">Nuevo movimiento</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="width:120px">Fecha</th>
+          <th style="width:100px">Tipo</th>
+          <th style="width:140px">Valor</th>
+          <th style="width:140px">Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="loading()"><td colspan="4">Cargando...</td></tr>
+
+        <tr *ngFor="let m of items()">
+          <td>{{ m.fecha | date:'yyyy-MM-dd HH:mm' }}</td>
+          <td>{{ m.tipoMovimiento }}</td>
+          <td [class.neg]="m.valor<0">{{ m.valor | number:'1.2-2' }}</td>
+          <td>{{ m.saldo | number:'1.2-2' }}</td>
+        </tr>
+
+        <tr *ngIf="!loading() && items().length===0">
+          <td colspan="4">Sin resultados</td>
+        </tr>
+      </tbody>
+      <tfoot *ngIf="items().length">
+        <tr>
+          <td colspan="2" style="text-align:right">Totales:</td>
+          <td>+{{ totCred() | number:'1.2-2' }} / -{{ totDeb() | number:'1.2-2' }}</td>
+          <td>{{ saldoFin() | number:'1.2-2' }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>

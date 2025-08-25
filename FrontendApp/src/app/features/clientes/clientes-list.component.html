@@ -1,0 +1,48 @@
+<section class="page">
+  <div class="page-header">
+    <h2>Clientes</h2>
+    <div class="actions">
+      <div class="search">
+        <input placeholder="Buscar" [(ngModel)]="q" (keyup.enter)="buscar()" />
+        <button class="btn" (click)="buscar()">Buscar</button>
+      </div>
+      <a class="btn btn-yellow" routerLink="/clientes/nuevo">Nuevo</a>
+    </div>
+  </div>
+
+  <p class="msg" *ngIf="error()">{{ error() }}</p>
+
+  <div class="card">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="width:64px">ID</th>
+          <th>Nombre</th>
+          <th>Identificación</th>
+          <th>Estado</th>
+          <th style="width:120px"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="loading()"><td colspan="5">Cargando...</td></tr>
+        <tr *ngFor="let c of items()">
+          <td>{{ c.clienteId }}</td>
+          <td>{{ c.nombre }}</td>
+          <td>{{ c.identificacion }}</td>
+          <td><span class="badge" [class.ok]="c.estado" [class.off]="!c.estado">{{ c.estado ? 'Activo' : 'Inactivo' }}</span></td>
+          <td class="actions-row">
+            <button class="link" (click)="editar(c.clienteId)">Editar</button>
+            <button class="link danger" (click)="eliminar(c.clienteId)">Eliminar</button>
+          </td>
+        </tr>
+        <tr *ngIf="!loading() && items().length===0"><td colspan="5">Sin resultados</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pager" *ngIf="total() > pageSize()">
+    <button class="btn" [disabled]="page()<=1" (click)="page.set(page()-1);">‹</button>
+    <span>Página {{page()}} de {{pages()}}</span>
+    <button class="btn" [disabled]="page()>=pages()" (click)="page.set(page()+1);">›</button>
+  </div>
+</section>

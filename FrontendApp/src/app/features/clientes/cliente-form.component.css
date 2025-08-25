@@ -1,0 +1,9 @@
+.form { display:grid; grid-template-columns:repeat(2,minmax(220px,1fr)); gap:12px; background:#fff; border:1px solid #eee; border-radius:12px; padding:16px; }
+label { display:grid; gap:6px; font-size:14px; }
+input, select { padding:8px 10px; border:1px solid #e5e5e5; border-radius:8px; background:#fff; }
+.chk { align-items:center; grid-column:1/-1; display:flex; gap:8px; }
+.actions { grid-column:1/-1; display:flex; justify-content:flex-end; gap:8px; margin-top:4px; }
+.btn { padding:8px 12px; border:1px solid #e5e5e5; border-radius:8px; background:#fff; cursor:pointer; }
+.btn-yellow { background:#ffe066; border-color:#ffd43b; }
+.err { color:#b00020; font-size:12px; margin-top:-6px; margin-bottom:4px; }
+.msg { color:#b00020; }

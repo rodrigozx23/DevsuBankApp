@@ -1,0 +1,67 @@
+<section class="page">
+  <div class="page-header"><h2>Reporte: Estado de Cuenta</h2></div>
+
+  <div class="card filters">
+    <label>
+      Cliente
+      <select
+        [ngModel]="clienteId()"
+        (ngModelChange)="clienteId.set($event)">
+        <option [ngValue]="null">-- Seleccione --</option>
+        <option *ngFor="let c of clientes()" [ngValue]="c.id">
+          {{ c.id }} — {{ c.nombre }}
+        </option>
+      </select>
+    </label>
+
+    <input  type="date" [ngModel]="desde()" (ngModelChange)="desde.set($event)" />
+    <input  type="date" [ngModel]="hasta()" (ngModelChange)="hasta.set($event)" />
+
+    <div class="row-actions">
+      <button class="btn" (click)="verJson()">Ver JSON</button>
+      <button class="btn btn-yellow" (click)="descargarPdf()">Descargar PDF</button>
+    </div>
+  </div>
+
+  <p class="msg" *ngIf="error()">{{ error() }}</p>
+
+  <div class="card" *ngIf="data() as d">
+    <div class="summary">
+      <strong>{{ d.clienteNombre }}</strong> (ID {{ d.clienteId }}) —
+      Rango: {{ d.desde | date:'yyyy-MM-dd' }} a {{ d.hasta | date:'yyyy-MM-dd' }} —
+      Totales: Créditos {{ d.totalCreditos | number:'1.2-2' }} · Débitos {{ d.totalDebitos | number:'1.2-2' }} · Saldo Final {{ d.saldoFinal | number:'1.2-2' }}
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th style="width:120px">Fecha</th>
+          <th>Cliente</th>
+          <th>NúmeroCuenta</th>
+          <th>Tipo</th>
+          <th>SaldoInicial</th>
+          <th>Estado</th>
+          <th>Movimiento</th>
+          <th>SaldoDisponible</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of filas()">
+          <td>{{ r.fecha ? (r.fecha | date:'yyyy-MM-dd') : '—' }}</td>
+          <td>{{ r.cliente }}</td>
+          <td>{{ r.numero }}</td>
+          <td>{{ r.tipoCuenta }}</td>
+          <td>{{ r.saldoInicial | number:'1.2-2' }}</td>
+          <td>
+            <span class="badge" [class.ok]="r.estado" [class.off]="!r.estado">{{ r.estado ? 'Activa':'Inactiva' }}</span>
+          </td>
+          <td [class.neg]="r.movimiento < 0">{{ r.movimiento | number:'1.2-2' }}</td>
+          <td>{{ r.saldoDisponible | number:'1.2-2' }}</td>
+        </tr>
+        <tr *ngIf="filas().length===0">
+          <td colspan="8">Sin resultados</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

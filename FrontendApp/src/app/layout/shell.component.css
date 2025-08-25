@@ -1,0 +1,5 @@
+:host { display:block; height:100vh; }
+.topbar { background:#fff; border-bottom:1px solid #eee; }
+.layout { display:grid; grid-template-columns:180px 1fr; height:calc(100vh - 56px); }
+.sidebar { background:#fff; border-right:1px solid #eee; }
+.content { background:#fafafa; padding:16px 20px; overflow:auto; }
