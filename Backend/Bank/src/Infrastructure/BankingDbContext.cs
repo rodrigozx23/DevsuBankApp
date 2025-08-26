@@ -77,8 +77,8 @@ public class BankingDbContext : DbContext
             var n = await base.SaveChangesAsync(ct);
 
             foreach (var e in nuevos)
-                e.Entity.ClienteId = e.Entity.PersonaId; // sincroniza en tests
-
+                e.Entity.ClienteId = e.Entity.PersonaId;
+            
             if (nuevos.Count > 0)
                 n += await base.SaveChangesAsync(ct);
 

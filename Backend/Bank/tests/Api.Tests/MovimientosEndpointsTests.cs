@@ -17,7 +17,6 @@ public class MovimientosEndpointsTests : IClassFixture<CustomWebApplicationFacto
     {
         var client = _factory.CreateClient();
 
-        // 1) Crear cliente
         var clienteDto = new {
             nombre = "María Test",
             genero = "F",
@@ -32,11 +31,10 @@ public class MovimientosEndpointsTests : IClassFixture<CustomWebApplicationFacto
         respCliente.StatusCode.Should().Be(HttpStatusCode.Created);
         var cliente = await respCliente.Content.ReadFromJsonAsync<ClienteCreatedDto>();
 
-        // 2) Crear cuenta para ese cliente (ajusta al DTO real de tu endpoint)
         var cuentaDto = new {
             clienteId = cliente.personaId,
             tipoCuenta = "Ahorros",
-            numeroCuenta = "AUTO-TST-001", // si tu endpoint lo permite, pon uno conocido
+            numeroCuenta = "AUTO-TST-001",
             saldo = 100m,
             estado = true
         };
@@ -44,7 +42,6 @@ public class MovimientosEndpointsTests : IClassFixture<CustomWebApplicationFacto
         respCuenta.StatusCode.Should().Be(HttpStatusCode.Created);
         var cuenta = await respCuenta.Content.ReadFromJsonAsync<CuentaCreatedDto>();
 
-        // 3) Intentar débito mayor al saldo
         var movDto = new { cuentaId = cuenta.cuentaId, tipoMovimiento = "debito", valor = 200m };
         var respMov = await client.PostAsJsonAsync("/api/movimientos", movDto);
 

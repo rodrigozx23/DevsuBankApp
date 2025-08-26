@@ -17,7 +17,7 @@ public class ClienteConfig : IEntityTypeConfiguration<Cliente>
         builder.Property(c => c.Estado)
                .HasDefaultValue(true)
                .IsRequired();
-        builder.HasAlternateKey(c => c.ClienteId);
+
         //builder.Property(c => c.ClienteId)
         //.UseIdentityColumn()
         //.ValueGeneratedOnAdd();

@@ -32,12 +32,10 @@ public class MovimientoService
 
         var ahora = dto.Fecha?.ToUniversalTime() ?? DateTime.UtcNow;
 
-        // Saldo actual = último movimiento o saldo inicial
         decimal saldoActual = cuenta.Movimientos?.OrderBy(m => m.Fecha).LastOrDefault()?.Saldo
                               ?? cuenta.Saldo;
 
-        // Normaliza tipo/valor y reglas
-        var tipo = (dto.TipoMovimiento ?? "").Trim().ToLowerInvariant(); // "credito" / "debito"
+        var tipo = (dto.TipoMovimiento ?? "").Trim().ToLowerInvariant();
         if (tipo != "credito" && tipo != "debito")
             throw new DomainException("Tipo inválido. Use 'Credito' o 'Debito'.");
 
@@ -46,11 +44,9 @@ public class MovimientoService
 
         if (tipo == "debito")
         {
-            // Regla: saldo disponible
             if (saldoActual <= 0 || saldoActual < valor)
                 throw new DomainException("Saldo no disponible");
 
-            // Regla: límite diario de retiro
             var inicioDia = ahora.Date;
             var finDia = inicioDia.AddDays(1);
 
@@ -62,7 +58,6 @@ public class MovimientoService
                 throw new DomainException("Cupo diario Excedido");
         }
 
-        // Valor firmado y nuevo saldo
         var valorFirmado = tipo == "debito" ? -valor : valor;
         var nuevoSaldo = saldoActual + valorFirmado;
 
@@ -71,11 +66,14 @@ public class MovimientoService
             CuentaId = cuenta.CuentaId,
             Fecha = ahora,
             TipoMovimiento = tipo == "debito" ? "Debito" : "Credito",
-            Valor = valorFirmado,     // débitos negativos, créditos positivos
+            Valor = valorFirmado,
             Saldo = nuevoSaldo
         };
 
         await _movs.AddAsync(mov);
+        await _uow.SaveChangesAsync();
+
+        cuenta.Saldo = nuevoSaldo;
         await _uow.SaveChangesAsync();
 
         return new MovimientoReadDto(mov.MovimientoId, mov.Fecha, mov.TipoMovimiento, mov.Valor, mov.Saldo, mov.CuentaId);
