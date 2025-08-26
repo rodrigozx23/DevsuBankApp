@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\PROY\\Backend\\Bank\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{398E13E1-1D32-4176-BB6D-107693EE7B50}|src\\Api\\Api.csproj|c:\\proy\\backend\\bank\\src\\api\\endpoints\\clienteendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{398E13E1-1D32-4176-BB6D-107693EE7B50}|src\\Api\\Api.csproj|solutionrelative:src\\api\\endpoints\\clienteendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{398E13E1-1D32-4176-BB6D-107693EE7B50}|src\\Api\\Api.csproj|c:\\proy\\backend\\bank\\src\\api\\endpoints\\movimientoendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{398E13E1-1D32-4176-BB6D-107693EE7B50}|src\\Api\\Api.csproj|solutionrelative:src\\api\\endpoints\\movimientoendpoints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -46,7 +50,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MovimientoService.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Application\\Services\\MovimientoService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Services\\MovimientoService.cs",
@@ -60,19 +64,31 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MovimientoEndpoints.cs",
-              "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\MovimientoEndpoints.cs",
-              "RelativeDocumentMoniker": "src\\Api\\Endpoints\\MovimientoEndpoints.cs",
-              "ToolTip": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\MovimientoEndpoints.cs",
-              "RelativeToolTip": "src\\Api\\Endpoints\\MovimientoEndpoints.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAWwBgAAAABAAAAAAAAAA==",
+              "Title": "ClienteEndpoints.cs",
+              "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\ClienteEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\Api\\Endpoints\\ClienteEndpoints.cs",
+              "ToolTip": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\ClienteEndpoints.cs",
+              "RelativeToolTip": "src\\Api\\Endpoints\\ClienteEndpoints.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-24T19:58:13.925Z",
+              "WhenOpened": "2025-08-25T20:16:34.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MovimientoEndpoints.cs",
+              "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\MovimientoEndpoints.cs",
+              "RelativeDocumentMoniker": "src\\Api\\Endpoints\\MovimientoEndpoints.cs",
+              "ToolTip": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\MovimientoEndpoints.cs",
+              "RelativeToolTip": "src\\Api\\Endpoints\\MovimientoEndpoints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-24T19:58:13.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ErrorHandlingMiddleware.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Api\\Middleware\\ErrorHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "src\\Api\\Middleware\\ErrorHandlingMiddleware.cs",
@@ -84,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MovimientoConfig.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Infrastructure\\Configurations\\MovimientoConfig.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Configurations\\MovimientoConfig.cs",
@@ -96,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BusinessRuleException.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Domain\\Exceptions\\BusinessRuleException.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Exceptions\\BusinessRuleException.cs",
@@ -108,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Domain\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Exceptions\\NotFoundException.cs",
@@ -120,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "DomainException.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Domain\\Exceptions\\DomainException.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Exceptions\\DomainException.cs",
@@ -132,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "CuentasEndpoints.cs",
               "DocumentMoniker": "C:\\PROY\\Backend\\Bank\\src\\Api\\Endpoints\\CuentasEndpoints.cs",
               "RelativeDocumentMoniker": "src\\Api\\Endpoints\\CuentasEndpoints.cs",

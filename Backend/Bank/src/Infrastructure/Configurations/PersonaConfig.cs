@@ -13,7 +13,10 @@ public class PersonaConfig : IEntityTypeConfiguration<Persona>
         builder.ToTable("Personas");
         builder.UseTptMappingStrategy();  
         builder.HasKey(p => p.PersonaId);
-        //builder.Property(p => p.PersonaId).ValueGeneratedOnAdd().UseIdentityColumn(); 
+
+        builder.Property(p => p.PersonaId)
+               .ValueGeneratedOnAdd();
+               
         builder.Property(p => p.Nombre)
             .HasMaxLength(150)
             .IsRequired();

@@ -22,3 +22,4 @@ C:\PROY\Backend\Bank\src\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.d
 C:\PROY\Backend\Bank\src\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\PROY\Backend\Bank\src\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
 C:\PROY\Backend\Bank\src\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\PROY\Backend\Bank\src\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "c73e9cfc-92ff-43d1-9a12-b1609b5ba547",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47900827",
+		"_collection_link": "https://rodrigo-bejar-s-team.postman.co/workspace/Team-Workspace~fbfe4cd1-4eab-4ebe-8eab-4d0d25dcacf1/collection/47900827-c73e9cfc-92ff-43d1-9a12-b1609b5ba547?action=share&source=collection_link&creator=47900827"
+	},
+	"item": [
+		{
+			"name": "ClienteCrear1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Jose Lema\",\r\n  \"genero\": \"M\",\r\n  \"edad\": 18,\r\n  \"identificacion\": \"CLI-001\",\r\n  \"direccion\": \"Otavalo sn y principal\",\r\n  \"telefono\": \"098254785\",\r\n  \"contrasena\": \"1234\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClienteCrear2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Marianela Montalvo\",\r\n  \"genero\": \"F\",\r\n  \"edad\": 19,\r\n  \"identificacion\": \"CLI-002\",\r\n  \"direccion\": \"Amazonas y NNUU\",\r\n  \"telefono\": \"097548965\",\r\n  \"contrasena\": \"5678\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClienteCrear3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Marianela Montalvo\",\r\n  \"genero\": \"f\",\r\n  \"edad\": 19,\r\n  \"identificacion\": \"CLI-002\",\r\n  \"direccion\": \"Amazonas y NNUU\",\r\n  \"telefono\": \"097548965\",\r\n  \"contrasena\": \"5678\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CuentaCrear1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": 1,\r\n  \"numeroCuenta\": \"478758\",\r\n  \"tipoCuenta\": \"ahorro\",\r\n  \"saldoInicial\": 2000,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CuentaCrear2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": 1,\r\n  \"numeroCuenta\": \"478758\",\r\n  \"tipoCuenta\": \"Ahorro\",\r\n  \"saldoInicial\": 2000,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CuentaCrear3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": 1,\r\n  \"numeroCuenta\": \"478758\",\r\n  \"tipoCuenta\": \"Ahorro\",\r\n  \"saldoInicial\": 2000,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CuentaCrear4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": 2,\r\n  \"numeroCuenta\": \"496825\",\r\n  \"tipoCuenta\": \"Ahorros\",\r\n  \"saldoInicial\": 540,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CuentaCrear5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"clienteId\": 1,\r\n  \"numeroCuenta\": \"585545\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 1000,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/cuentas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"cuentas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearMovimientos1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": 1,\r\n  \"tipoMovimiento\": \"Debito\",\r\n  \"valor\": -575,\r\n  \"fecha\": \"2025-08-26T00:37:17.469Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearMovimientos2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": 2,\r\n  \"tipoMovimiento\": \"Credito\",\r\n  \"valor\":  600,\r\n  \"fecha\": \"2025-08-26T00:37:17.469Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearMovimientos3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": 3,\r\n  \"tipoMovimiento\": \"Credito\",\r\n  \"valor\":  150,\r\n  \"fecha\": \"2025-08-26T00:37:17.469Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CrearMovimientos4",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": 4,\r\n  \"tipoMovimiento\": \"Debito\",\r\n  \"valor\":  -540,\r\n  \"fecha\": \"2025-08-26T00:37:17.469Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ObtenerReporte",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "*/*",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cuentaId\": 4,\r\n  \"tipoMovimiento\": \"Debito\",\r\n  \"valor\":  -540,\r\n  \"fecha\": \"2025-08-26T00:37:17.469Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/reportes/estado-cuenta?clienteId=2&desde=2025-08-25&hasta=2025-08-25&format=json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"reportes",
+						"estado-cuenta"
+					],
+					"query": [
+						{
+							"key": "clienteId",
+							"value": "2"
+						},
+						{
+							"key": "desde",
+							"value": "2025-08-25"
+						},
+						{
+							"key": "hasta",
+							"value": "2025-08-25"
+						},
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

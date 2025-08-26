@@ -20,3 +20,4 @@ C:\PROY\Backend\Bank\src\Domain\obj\Debug\net8.0\Domain.dll
 C:\PROY\Backend\Bank\src\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\PROY\Backend\Bank\src\Domain\obj\Debug\net8.0\Domain.pdb
 C:\PROY\Backend\Bank\src\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\PROY\Backend\Bank\src\Domain\obj\Debug\net8.0\Domain.sourcelink.json

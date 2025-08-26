@@ -25,18 +25,18 @@ var cs = builder.Configuration.GetConnectionString("Default") ??
 builder.Services.AddDbContext<BankingDbContext>(opt => opt.UseSqlServer(cs));
 
 // DI
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
 builder.Services.AddScoped<ICuentaRepository, CuentaRepository>();
 builder.Services.AddScoped<IMovimientoRepository, MovimientoRepository>();
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<MovimientoService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
-app.UseCors("ng");
-
 app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseCors("ng");
 
 if (app.Environment.IsDevelopment())
 {

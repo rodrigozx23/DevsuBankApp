@@ -17,13 +17,13 @@ public class ClienteConfig : IEntityTypeConfiguration<Cliente>
         builder.Property(c => c.Estado)
                .HasDefaultValue(true)
                .IsRequired();
-
+        builder.HasAlternateKey(c => c.ClienteId);
         //builder.Property(c => c.ClienteId)
         //.UseIdentityColumn()
         //.ValueGeneratedOnAdd();
 
         // Ensure EF never tries to send it before/after save
-        //builder.Property(c => c.ClienteId).Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
-        //builder.Property(c => c.ClienteId).Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+        builder.Property(c => c.ClienteId).Metadata.SetBeforeSaveBehavior(PropertySaveBehavior.Ignore);
+        builder.Property(c => c.ClienteId).Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
     }
 }

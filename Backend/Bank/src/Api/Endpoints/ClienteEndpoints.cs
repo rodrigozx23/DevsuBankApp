@@ -2,6 +2,7 @@ using System;
 using Bank.Application.DTOs;
 using Bank.Application.Interfaces;
 using Bank.Domain.Entities;
+using Bank.Infrastructure;
 
 namespace Bank.Api.Endpoints;
 

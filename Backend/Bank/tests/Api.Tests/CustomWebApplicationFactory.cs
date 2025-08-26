@@ -9,58 +9,44 @@ namespace Api.Tests;
 
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
-    private SqliteConnection? _conn;
+    private SqliteConnection? _keepAlive; // mantiene viva la DB en memoria
 
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.ConfigureServices(services =>
         {
-            // Quitar el DbContext original
-            var toRemove = services.Where(s => s.ServiceType == typeof(DbContextOptions<BankingDbContext>)).ToList();
+            // 1) Quitar el DbContext original (SQL Server)
+            var toRemove = services
+                .Where(d => d.ServiceType == typeof(DbContextOptions<BankingDbContext>))
+                .ToList();
             foreach (var d in toRemove) services.Remove(d);
 
-            // SQLite en memoria (mantén la conexión abierta)
-            _conn = new SqliteConnection("DataSource=:memory:");
-            _conn.Open();
+            // 2) Crear UNA conexión en memoria y mantenerla abierta
+            _keepAlive = new SqliteConnection("DataSource=:memory:");
+            _keepAlive.Open();
 
-            services.AddDbContext<BankingDbContext>(opt => opt.UseSqlite(_conn));
+            // 3) Re-registrar DbContext usando ESA conexión
+            services.AddDbContext<BankingDbContext>(opt =>
+            {
+                opt.UseSqlite(_keepAlive);
+            });
 
-            // Construir y crear esquema
+            // 4) Construir provider y crear esquema
             var sp = services.BuildServiceProvider();
             using var scope = sp.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<BankingDbContext>();
-            db.Database.EnsureCreated();
 
-            // Seed mínimo (coincide con tu modelo TPT)
-            var cli = new Bank.Domain.Entities.Cliente
-            {
-                Nombre = "Cliente Test",
-                Identificacion = "CLI-T1",
-                Estado = true,
-                Genero = "M",
-                Edad = 30,
-                Direccion = "Calle 1",
-                Telefono = "999",
-                Contrasena = "x"
-            };
-            db.Clientes.Add(cli);  // EF hará INSERT Personas -> INSERT Clientes
-            db.SaveChanges();
+            db.Database.EnsureCreated(); // ← tablas listas en la misma conexión
 
-            db.Cuentas.Add(new Bank.Domain.Entities.Cuenta
-            {
-                ClienteId = (int)cli.PersonaId,   // PK compartida
-                NumeroCuenta = "T-0001",
-                TipoCuenta = "Ahorros",
-                Saldo = 100m,
-                Estado = true
-            });
-            db.SaveChanges();
+            // 5) (Opcional) Semillas para pruebas
+            // db.Add(new Cliente { ... });
+            // db.SaveChanges();
         });
     }
 
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        _conn?.Dispose();
+        _keepAlive?.Dispose(); // cierra la conexión al terminar TODO el factory
     }
 }

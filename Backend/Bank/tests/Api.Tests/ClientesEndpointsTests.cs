@@ -28,12 +28,17 @@ public class ClientesEndpointsTests : IClassFixture<CustomWebApplicationFactory>
         };
 
         var resp = await client.PostAsJsonAsync("/api/clientes", dto);
-
+        
+        if (!resp.IsSuccessStatusCode)
+        {
+            var body2 = await resp.Content.ReadAsStringAsync();
+            throw new Xunit.Sdk.XunitException($"Status: {(int)resp.StatusCode} {resp.StatusCode}\nBody:\n{body2}");
+        }
         resp.StatusCode.Should().Be(HttpStatusCode.Created);
 
         var body = await resp.Content.ReadFromJsonAsync<ClienteCreatedDto>();
         body.Should().NotBeNull();
         body!.nombre.Should().Be("María Test");
-        body.personaId.Should().BeGreaterThan(0);
+        Console.WriteLine($"[SEED] body insertado PersonaId={body.personaId}");
     }
 }

@@ -196,3 +196,4 @@ C:\PROY\Backend\Bank\src\Api\obj\Debug\net8.0\refint\Api.dll
 C:\PROY\Backend\Bank\src\Api\obj\Debug\net8.0\Api.pdb
 C:\PROY\Backend\Bank\src\Api\obj\Debug\net8.0\Api.genruntimeconfig.cache
 C:\PROY\Backend\Bank\src\Api\obj\Debug\net8.0\ref\Api.dll
+C:\PROY\Backend\Bank\src\Api\obj\Debug\net8.0\Api.sourcelink.json
